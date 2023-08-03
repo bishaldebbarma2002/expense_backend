@@ -1,5 +1,6 @@
 const dotenv = require("dotenv");
 dotenv.config({ path: ".env" });
+const cors = require("cors");
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
@@ -12,6 +13,12 @@ const app = express();
 
 const dbURI = process.env.DATABASE;
 const port = process.env.PORT || 8080;
+
+// Enable CORS for a specific origin
+app.use(cors({
+  origin: 'https://expense-tracer-by-bishal.netlify.app/',
+}));
+
 
 app.use(express.static("public"));
 app.use(express.json());
