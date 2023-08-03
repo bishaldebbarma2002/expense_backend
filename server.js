@@ -25,10 +25,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(Router);
 
-// Define a route handler for the root path ("/")
+/*/ Define a route handler for the root path ("/")
 app.get("/", (req, res) => {
   res.send("");
-});
+});*/
 
 mongoose
   .connect(dbURI)
