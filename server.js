@@ -6,13 +6,15 @@ const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 const Router = require("./routers");
 const path = require("path");
-
-
-
 const app = express();
 
 const dbURI = process.env.DATABASE;
 const port = process.env.PORT || 8080;
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://expense-tracer-by-bishal.netlify.app');
+  next();
+});
 
 // Enable CORS for a specific origin
 app.use(cors({
