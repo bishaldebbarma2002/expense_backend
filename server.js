@@ -16,7 +16,7 @@ const port = process.env.PORT || 8080;
 
 // Enable CORS for a specific origin
 app.use(cors({
-  origin: 'https://expense-tracer-by-bishal.netlify.app/',
+  origin: 'https://expense-tracer-by-bishal.netlify.app',
 }));
 
 
